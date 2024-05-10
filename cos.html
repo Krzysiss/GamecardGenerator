@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator Losowych Słów</title>
+</head>
+<body>
+    <h1>Generator Losowych Słów</h1>
+    <p>Wybierz opcję generowania losowych słów:</p>
+    <select id="options">
+        <option value="random">Losowanie liter</option>
+        <option value="realistic">Realistyczne losowanie liter</option>
+        <option value="custom">Losowanie z ustalonego zestawu liter</option>
+    </select>
+    <br><br>
+    <div id="wordContainer"></div>
+    <br>
+    <div id="customOptions" style="display:none;">
+        <label for="customLetters">Zestaw liter:</label>
+        <input type="text" id="customLetters" placeholder="np. abcdefgh">
+    </div>
+    <br>
+    <button onclick="generateWord()">Generuj Słowo</button>
+
+    <script>
+        function generateRandomWord(length) {
+            var word = '';
+            var characters = 'abcdefghijklmnopqrstuvwxyz';
+            for (var i = 0; i < length; i++) {
+                word += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return word;
+        }
+
+        function generateRealisticWord(length) {
+            var word = '';
+            var letterProbabilities = {'a': 8, 'b': 2, 'c': 3, 'd': 4, 'e': 12, 'f': 2, 'g': 2, 'h': 6, 'i': 7, 'j': 1, 'k': 1, 'l': 4,
+                                       'm': 2, 'n': 7, 'o': 8, 'p': 2, 'q': 1, 'r': 6, 's': 6, 't': 9, 'u': 3, 'v': 1, 'w': 2, 'x': 1,
+                                       'y': 2, 'z': 1};
+            var letters = Object.keys(letterProbabilities);
+            var weights = Object.values(letterProbabilities);
+            for (var i = 0; i < length; i++) {
+                word += letters[Math.floor(Math.random() * letters.length)];
+            }
+            return word;
+        }
+
+        function generateCustomWord(length, customLetters) {
+            var word = '';
+            for (var i = 0; i < length; i++) {
+                word += customLetters.charAt(Math.floor(Math.random() * customLetters.length));
+            }
+            return word;
+        }
+
+        function generateWord() {
+            var option = document.getElementById("options").value;
+            var wordLength = parseInt(prompt("Podaj długość słowa:"));
+
+            if (isNaN(wordLength) || wordLength <= 0) {
+                alert("Podana długość jest nieprawidłowa.");
+                return;
+            }
+
+            var word;
+            if (option === "random") {
+                word = generateRandomWord(wordLength);
+            } else if (option === "realistic") {
+                word = generateRealisticWord(wordLength);
+            } else if (option === "custom") {
+                var customLetters = document.getElementById("customLetters").value;
+                if (customLetters.length === 0) {
+                    alert("Podaj zestaw liter.");
+                    return;
+                }
+                word = generateCustomWord(wordLength, customLetters);
+            }
+
+            document.getElementById("wordContainer").innerText = "Wygenerowane słowo: " + word;
+        }
+
+        document.getElementById("options").addEventListener("change", function() {
+            var customOptions = document.getElementById("customOptions");
+            if (this.value === "custom") {
+                customOptions.style.display = "block";
+            } else {
+                customOptions.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles2.css">
+    <script src="https://github.com/niklasvh/html2canvas/releases/download/v1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <h1>Generuj Karty</h1>
+    <div class="contentBox">
+        <div id="card">
+            <div id="name"></div>
+            <div id="cardImg">
+                <img src="IMG_2707.png" id="image" alt="img">
+            </div>
+            <div id="cardStats">
+                <div class="stat short" id="power"></div>
+                <div class="stat short" id="dodge"></div>
+                <div class="stat long" id="dexterity"></div>
+                <div id="description"></div>
+                <div id="category"></div>
+                <div id="bounty"></div>
+            </div>
+        </div>
+        <div class="inputs">
+            <div class="contentBlock">
+                <h2>Generuj</h2>
+                <input type="button" value="Gneruj Imie">
+                <input type="button" value="Gneruj Staty">
+                <select name="level" id="ta" >
+                    <option value="Latwy">Slaby</option>
+                    <option value="Latwy">Sredni</option>
+                    <option value="Latwy">Mocny</option>
+                </select>
+            </div>
+            <div class="contentBlock">
+                <h2>Staty:</h2>
+                <input type="file" id="typeImage" accept=".png">
+                <input class="inputNumber" type="number" id="typePower" placeholder="Sila">
+                <input class="inputNumber" type="number" id="typeDodge" placeholder="Unik">
+                <input class="inputNumber" type="number" id="typeSkill" placeholder="Zrecznosc">
+                <input class="inputNumber" type="number" id="typeBounty" placeholder="Nagroda">
+            </div>
+            <div class="contentBlock">
+                <h2 class="inputNumber">Opcjonalne:</h2>
+                <input class="inputNumber" type="text" id="typeName" placeholder="Nazwa">
+                <input type="text" id="typeDescription" placeholder="Opis">
+                <input class="inputNumber" type="text" id="typeCategory" placeholder="Kat.">            
+                <input type="button" value="Generuj" id="generate">
+                <input type="button" value="Save" id="save">
+            </div>
+        </div>
+    </div>
+    <div class="contentBox">
+        <div id="card">
+            <div id="name"></div>
+            <div id="cardImg">
+                <img src="IMG_2707.png" alt="img">
+            </div>
+            <div id="cardStats">
+                <div id="description"></div>
+                <div id="category"></div>
+            </div>
+        </div>
+        <div class="inputs">
+            <div class="contentBlock">
+                <h2>Generuj</h2>
+                <input type="button" value="Gneruj Imie">
+            </div>
+            <div class="contentBlock">
+                <h2 class="inputNumber">Dane:</h2>
+                <input type="file" id="typeImage" accept=".png">
+                <input class="inputNumber" type="text" id="typeName" placeholder="Nazwa">
+                <input type="text" id="typeDescription" placeholder="Opis">
+                <input class="inputNumber" type="text" id="typeCategory" placeholder="Kat.">            
+                <input type="button" value="Generuj" id="generate">
+                <input type="button" value="Save" id="save">
+            </div>
+        </div>
+    </div>
+    <div class="contentBox">
+        <div id="card">
+            <div id="name"></div>
+            <div id="cardStats">
+                <div id="description"></div>
+                <div id="category"></div>
+            </div>
+        </div>
+        <div class="inputs">
+            <div class="contentBlock">
+                <h2>Generuj</h2>
+                <input type="button" value="Gneruj Imie">
+            </div>
+            <div class="contentBlock">
+                <h2 class="inputNumber">Dane:</h2>
+                <input class="inputNumber" type="text" id="typeName" placeholder="Nazwa">
+                <input type="text" id="typeDescription" placeholder="Opis">
+                <input class="inputNumber" type="text" id="typeCategory" placeholder="Kat.">            
+                <input type="button" value="Generuj" id="generate">
+                <input type="button" value="Save" id="save">
+            </div>
+        </div>
+    </div>
+    <!-- <script src="script.js"></script>
+    <script src="keydown.js"></script> -->
+
+    <script src="fullCard.js"></script>
+</body>
+</html>
