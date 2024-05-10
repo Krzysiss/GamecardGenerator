@@ -7,102 +7,103 @@
 <body>
     <h1>Generuj Karty</h1>
     <div class="contentBox">
-        <div id="card">
-            <div id="name"></div>
-            <div id="cardImg">
-                <img src="IMG_2707.png" id="image" alt="img">
+        <div class="card" id="card">
+            <div class="name" id="name"></div>
+            <div class="cardImg" id="cardImg">
+                <img src="IMG_2707.png" class="image" id="image" alt="img">
             </div>
-            <div id="cardStats">
+            <div class="cardStats" id="cardStats">
                 <div class="stat short" id="power"></div>
                 <div class="stat short" id="dodge"></div>
                 <div class="stat long" id="dexterity"></div>
-                <div id="description"></div>
-                <div id="category"></div>
-                <div id="bounty"></div>
+                <div class="description" id="description"></div>
+                <div class="category" id="category"></div>
+                <div class="bounty" id="bounty"></div>
             </div>
         </div>
         <div class="inputs">
             <div class="contentBlock">
                 <h2>Generuj</h2>
-                <input type="button" value="Gneruj Imie">
-                <input type="button" value="Gneruj Staty">
-                <select name="level" id="ta" >
-                    <option value="Latwy">Slaby</option>
-                    <option value="Latwy">Sredni</option>
-                    <option value="Latwy">Mocny</option>
+                <input type="button" value="Gneruj Imie" id="generateName">
+                <select id="options">
+                    <option value="random">Losowanie liter</option>
+                    <option value="realistic">Realistyczne losowanie</option>
                 </select>
+                <a href="gen.html" target="_blank">Generator statystyk</a>
             </div>
             <div class="contentBlock">
                 <h2>Staty:</h2>
-                <input type="file" id="typeImage" accept=".png">
-                <input class="inputNumber" type="number" id="typePower" placeholder="Sila">
-                <input class="inputNumber" type="number" id="typeDodge" placeholder="Unik">
-                <input class="inputNumber" type="number" id="typeSkill" placeholder="Zrecznosc">
-                <input class="inputNumber" type="number" id="typeBounty" placeholder="Nagroda">
+                <input class="inputNumber" type="number" id="typePower" placeholder="Sila" min="0" max="99">
+                <input class="inputNumber" type="number" id="typeDodge" placeholder="Unik" min="0" max="99">
+                <input class="inputNumber" type="number" id="typeSkill" placeholder="Zrecznosc" min="0" max="99">
+                <input class="inputNumber" type="number" id="typeBounty" placeholder="Nagroda" min="0" max="99">
+                <input type="file" id="typeImage" accept=".jpg, .png">
             </div>
             <div class="contentBlock">
                 <h2 class="inputNumber">Opcjonalne:</h2>
                 <input class="inputNumber" type="text" id="typeName" placeholder="Nazwa">
                 <input type="text" id="typeDescription" placeholder="Opis">
                 <input class="inputNumber" type="text" id="typeCategory" placeholder="Kat.">            
-                <input type="button" value="Generuj" id="generate">
                 <input type="button" value="Save" id="save">
             </div>
         </div>
     </div>
     <div class="contentBox">
-        <div id="card">
-            <div id="name"></div>
-            <div id="cardImg">
-                <img src="IMG_2707.png" alt="img">
+        <div class="card" id="card1">
+            <div class="name" id="name1"></div>
+            <div class="cardImg" id="cardImg1">
+                <img src="IMG_2707.png" class="image" id="image1" alt="img">
             </div>
-            <div id="cardStats">
-                <div id="description"></div>
-                <div id="category"></div>
+            <div class="cardStats">
+                <div class="description" id="description1"></div>
+                <div class="category" id="category1"></div>
             </div>
         </div>
         <div class="inputs">
             <div class="contentBlock">
                 <h2>Generuj</h2>
-                <input type="button" value="Gneruj Imie">
+                <input type="button" value="Gneruj Imie" id="generateName1">
+                <select id="options1">
+                    <option value="random">Losowanie liter</option>
+                    <option value="realistic">Realistyczne losowanie</option>
+                </select>
             </div>
             <div class="contentBlock">
                 <h2 class="inputNumber">Dane:</h2>
-                <input type="file" id="typeImage" accept=".png">
-                <input class="inputNumber" type="text" id="typeName" placeholder="Nazwa">
-                <input type="text" id="typeDescription" placeholder="Opis">
-                <input class="inputNumber" type="text" id="typeCategory" placeholder="Kat.">            
-                <input type="button" value="Generuj" id="generate">
-                <input type="button" value="Save" id="save">
+                <input class="inputNumber" type="text" id="typeName1" placeholder="Nazwa">
+                <input type="text" id="typeDescription1" placeholder="Opis">
+                <input class="inputNumber" type="text" id="typeCategory1" placeholder="Kat.">            
+                <input type="file" id="typeImage1" accept=".png">
+                <input type="button" value="Save" id="save1">
             </div>
         </div>
     </div>
     <div class="contentBox">
-        <div id="card">
-            <div id="name"></div>
-            <div id="cardStats">
-                <div id="description"></div>
-                <div id="category"></div>
+        <div class="card" id="card2">
+            <div class="name" id="name2"></div>
+            <div class="cardStats">
+                <div class="description" id="description2"></div>
+                <div class="name" id="category2"></div>
             </div>
         </div>
         <div class="inputs">
             <div class="contentBlock">
                 <h2>Generuj</h2>
-                <input type="button" value="Gneruj Imie">
+                <input type="button" value="Gneruj Imie" id="generateName2">
+                <select id="options2">
+                    <option value="random">Losowanie liter</option>
+                    <option value="realistic">Realistyczne losowanie</option>
+                </select>
             </div>
             <div class="contentBlock">
                 <h2 class="inputNumber">Dane:</h2>
-                <input class="inputNumber" type="text" id="typeName" placeholder="Nazwa">
-                <input type="text" id="typeDescription" placeholder="Opis">
-                <input class="inputNumber" type="text" id="typeCategory" placeholder="Kat.">            
-                <input type="button" value="Generuj" id="generate">
-                <input type="button" value="Save" id="save">
+                <input class="inputNumber" type="text" id="typeName2" placeholder="Nazwa">
+                <input type="text" id="typeDescription2" placeholder="Opis">
+                <input class="inputNumber" type="text" id="typeCategory2" placeholder="Kat.">            
+                <input type="button" value="Save" id="save2">
             </div>
         </div>
     </div>
-    <!-- <script src="script.js"></script>
-    <script src="keydown.js"></script> -->
-
     <script src="fullCard.js"></script>
 </body>
 </html>
