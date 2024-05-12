@@ -22,9 +22,17 @@ function Save(cardID){
     });
 }
 
+function ClearValue(id){
+    document.getElementById(id).value = "";
+}
+
 function SaveButton(id, cardID){
     document.getElementById(id).addEventListener("click", function(){
         Save(cardID);
+        ClearValue("typePower");
+        ClearValue("typeDodge");
+        ClearValue("typeSkill");
+        ClearValue("typeBounty");
     });
 }
 
@@ -41,6 +49,16 @@ function TypeImage(buttonID, imageID){
         reader.readAsDataURL(file);
     });
 }
+
+document.getElementById("typeBounty").addEventListener("keydown", (event) => {
+    if(event.key === "Enter"){
+        Save("card");
+        ClearValue("typePower");
+        ClearValue("typeDodge");
+        ClearValue("typeSkill");
+        ClearValue("typeBounty");
+    }
+});
 
 SaveButton("save", "card");
 SaveButton("save1", "card1");
@@ -81,6 +99,8 @@ Write("category2", "typeCategory2", "");
 GenerateWordButton("generateName", "options", "name");
 GenerateWordButton("generateName1", "options1", "name1");
 GenerateWordButton("generateName2", "options2", "name2");
+
+
 
 function GenerateWordButton(id, optionID, nameID){
     document.getElementById(id).addEventListener("click", function(){
